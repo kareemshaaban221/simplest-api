@@ -35,6 +35,7 @@ $deleteOne = function ($id) use ($data) {
     foreach ($data as $i => $std) {
         if ($std['id'] == $id) {
             unset($data[$i]);
+            $data = array_values($data);
             inject_to_db($data);
             return response($data);
         }
