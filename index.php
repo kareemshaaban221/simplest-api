@@ -72,6 +72,8 @@ $parts = explode('/', $uri);
 $last = array_pop($parts);
 $method = strtolower($_SERVER['REQUEST_METHOD']);
 
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
 header('Content-Type: application/json');
 
 switch ($last) {
